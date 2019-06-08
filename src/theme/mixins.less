@@ -1,0 +1,111 @@
+// mixins
+
+#box(@width, @height) {
+  width: @width;
+  height: @height;
+}
+#pos(@mode, @right, @top){
+  position: @mode;
+  right: @right;
+  top: @top;
+}
+#translate(@right, @top){
+  -webkit-transform: translate(@right, -@top);
+  -moz-transform: translate(@right, -@top);
+  -ms-transform: translate(@right, -@top);
+  -o-transform: translate(@right, -@top);
+  transform: translate(@right, -@top);
+}
+#translateX(@right){
+  -webkit-transform: translateX(@right);
+  -moz-transform: translateX(@right);
+  -ms-transform: translateX(@right);
+  -o-transform: translateX(@right);
+  transform: translateX(@right);
+}
+#translateY(@top){
+  -webkit-transform: translateY(-@top);
+  -moz-transform: translateY(-@top);
+  -ms-transform: translateY(-@top);
+  -o-transform: translateY(-@top);
+  transform: translateY(-@top);
+}
+#border-radius(@radius : 2px){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+#box-shadow(@horizontal : 0, @vertical : 2px, @blur : 10px, @spread : 0, @color : rgba(0,0,0,0.5)){
+  -webkit-box-shadow: @horizontal @vertical @blur @spread @color;
+  -moz-box-shadow: @horizontal @vertical @blur @spread @color;
+  box-shadow: @horizontal @vertical @blur @spread @color;
+}
+
+#placeholder(@color){
+  &::-webkit-input-placeholder {
+    color: @color;
+    font-family: 'b2mark' ,sans-serif;
+    font-weight: normal;
+  }
+  &::-moz-placeholder {
+    color: @color;
+    font-family: 'b2mark' ,sans-serif;
+    font-weight: normal;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+    font-family: 'b2mark' ,sans-serif;
+    font-weight: normal;
+  }
+  &:-moz-placeholder {
+    color: @color;
+    font-family: 'b2mark' ,sans-serif;
+    font-weight: normal;
+  }
+}
+
+#rtl-placeholder{
+  &::-webkit-input-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: right;
+    direction: rtl;
+  }
+  &::-moz-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: right;
+    direction: rtl;    
+  }
+  &:-ms-input-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: right;
+    direction: rtl;    
+  }
+  &:-moz-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: right;
+    direction: rtl;    
+  }
+}
+
+#ltr-placeholder{
+  &::-webkit-input-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: left;
+    direction: ltr;
+  }
+  &::-moz-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: left;
+    direction: ltr;    
+  }
+  &:-ms-input-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: left;
+    direction: ltr;
+  }
+  &:-moz-placeholder {
+    font-family: 'Becopay' ,sans-serif;
+    text-align: left;
+    direction: ltr;
+  }
+}

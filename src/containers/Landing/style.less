@@ -1,0 +1,109 @@
+@import (reference) "../../theme/application";
+
+.header-logo
+{
+    height: 100px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom:  15px;
+    img{
+        height: 100%;
+    }
+    background-color: darken(@palette-high, 10%);
+}
+
+.top-menu
+{
+    height: 50px;
+    width: 100%;
+    background-color:darken(@palette-low, 20%);
+    color : @primaryVariant6;
+    a{
+        height: 50px;
+        display: inline-block;
+        line-height: 50px;
+        color: @primaryVariant6;
+        font-size : 20px;
+        padding: 0 10px;
+        &:hover
+        {
+                color: @primaryVariant6;
+                background-color: darken(@palette-low, 25%);
+        }
+    }
+    .exchange
+    {
+        font-weight: bold;
+    }
+
+    text-align: center;
+}
+
+.landing-content
+{
+    background-color: lighten(@palette-high,10%);
+    background-image: url("./back.png");
+    color : @palette-light;
+    margin : 0;
+    padding: 30px;
+    text-align: center;
+    h1
+    {
+        font-size: 60px;
+        color : @palette-light;
+    }
+    .login-signin
+    {
+        width: 272px;
+       margin: auto;
+       .startButton
+       {
+           background-color: @primaryVariant6;
+           border-color : @primaryVariant6;
+           font-size : 20px;
+           padding: 25px 60px;
+           font-weight: bold;
+           height: auto;
+            &:hover , &:focus {
+               background-color: darken(@palette-high, 10%);
+               border-color : darken(@palette-high, 10%);
+           }
+       }
+       .already-memeber
+       {
+           text-align: right;
+           padding-right: 5px;
+           .signin
+           {
+               color : darken(@palette-high, 10%);
+               padding-left: 5px;
+               text-decoration: none;
+           }
+       }
+    }
+}
+.hero{
+    .ant-card
+    {
+        margin-bottom: 20px;
+    }
+}
+.copyright
+{
+    text-align: center;
+    color: @primaryVariant6;
+    margin-top: 30px;
+}
+.socials
+{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+    a {
+     color : @palette-high;
+     & :hover , & :focus
+     {
+         color : @secondaryVariant2
+     }
+    }
+}

@@ -1,0 +1,300 @@
+// we override ant styles here
+&[dir='rtl'] {
+
+    .ant-tabs-nav .ant-tabs-tab
+    {
+        margin: 0px 0px 0px 32px;
+    }
+    .ant-col-sm-1,
+    .ant-col-sm-10,
+    .ant-col-sm-11,
+    .ant-col-sm-12,
+    .ant-col-sm-13,
+    .ant-col-sm-14,
+    .ant-col-sm-15,
+    .ant-col-sm-16,
+    .ant-col-sm-17,
+    .ant-col-sm-18,
+    .ant-col-sm-19,
+    .ant-col-sm-2,
+    .ant-col-sm-20,
+    .ant-col-sm-21,
+    .ant-col-sm-22,
+    .ant-col-sm-23,
+    .ant-col-sm-24,
+    .ant-col-sm-3,
+    .ant-col-sm-4,
+    .ant-col-sm-5,
+    .ant-col-sm-6,
+    .ant-col-sm-7,
+    .ant-col-sm-8,
+    .ant-col-sm-9 {
+        float: right;
+    }
+    @media (min-width: 768px) {
+        .ant-col-md-1,
+        .ant-col-md-10,
+        .ant-col-md-11,
+        .ant-col-md-12,
+        .ant-col-md-13,
+        .ant-col-md-14,
+        .ant-col-md-15,
+        .ant-col-md-16,
+        .ant-col-md-17,
+        .ant-col-md-18,
+        .ant-col-md-19,
+        .ant-col-md-2,
+        .ant-col-md-20,
+        .ant-col-md-21,
+        .ant-col-md-22,
+        .ant-col-md-23,
+        .ant-col-md-24,
+        .ant-col-md-3,
+        .ant-col-md-4,
+        .ant-col-md-5,
+        .ant-col-md-6,
+        .ant-col-md-7,
+        .ant-col-md-8,
+        .ant-col-md-9 {
+            float: right;
+        }
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow svg {
+        transform: scaleX(-1);
+        transition: transform 0.2s;
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header[aria-expanded="true"] .anticon-right svg {
+        transform: rotate(90deg);
+        transition: transform 0.2s;
+    }
+
+    .ant-popover {
+        text-align: right;
+    }
+
+    .ant-table table {
+        text-align: right;
+    }
+
+    .ant-table-thead > tr > th {
+        text-align: right;
+    }
+
+    .ant-btn > .anticon + span,
+    .ant-btn > span + .anticon {
+        margin-left: auto;
+        margin-right: 8px;
+    }
+
+    .ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) .anticon {
+        margin-right: -14px;
+        margin-left: auto;
+        padding-right: 10px;
+    }
+
+    .ant-notification-notice-closable .ant-notification-notice-message {
+        margin-right: 48px;
+        padding-right: 0;
+        margin-left: auto;
+    }
+
+    .ant-notification-notice-with-icon .ant-notification-notice-description {
+        margin-right: 48px;
+        padding-right: 0;
+        margin-left: auto;
+    }
+
+    .ant-notification-notice-close {
+        right: auto;
+        left: 22px;
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow {
+        right: 16px;
+        left: auto;
+    }
+
+    .ant-modal-close {
+        left: 0;
+        right: auto;
+    }
+
+    .ant-modal-footer {
+        text-align: left;
+
+        button + button {
+            margin-right: 8px;
+            margin-left: 0;
+        }
+    }
+
+    .ant-select-selection-selected-value {
+        float: right;
+        padding-left: 20px;
+        padding-right: 0;
+    }
+
+    .ant-select-arrow {
+        left: 11px;
+        right: auto;
+    }
+
+    .ant-select-selection--multiple .ant-select-selection__choice {
+        float: right;
+        margin-right: 0;
+        margin-left: 4px;
+    }
+
+    .ant-select-selection__rendered {
+        //margin-right: 0;
+    }
+
+    .ant-select-selection--multiple .ant-select-selection__rendered {
+        margin-right: 5px;
+    }
+
+    .ant-select-dropdown-menu {
+        padding-right: 0;
+    }
+
+    .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item::after {
+        left: 12px;
+        right: auto;
+    }
+
+    .ant-select-search__field__placeholder,
+    .ant-select-selection__placeholder {
+        left: auto;
+        right: 9px;
+    }
+
+    .ant-message-custom-content {
+        .anticon-cross-circle {
+            margin: 0 0 0 10px;
+        }
+    }
+
+    .ant-pagination-item,
+    .ant-pagination-jump-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-prev {
+        margin-right: auto;
+        margin-left: 8px;
+    }
+
+    .ant-pagination-item-link,
+    .ant-pagination-item-link-icon {
+        transform: scaleX(-1) !important;
+    }
+
+    .ant-select-selection__clear {
+        right: auto;
+        left: 11px;
+    }
+
+    .ant-calendar-picker-clear,
+    .ant-calendar-picker-icon {
+        left: 12px;
+        right: auto;
+    }
+
+    .ant-calendar-header .ant-calendar-next-month-btn {
+        left: 29px;
+        right: auto;
+    }
+
+    .ant-calendar-header .ant-calendar-next-century-btn,
+    .ant-calendar-header .ant-calendar-next-decade-btn,
+    .ant-calendar-header .ant-calendar-next-year-btn {
+        right: auto;
+        left: 7px;
+    }
+
+    .ant-calendar-header .ant-calendar-prev-month-btn {
+        left: auto;
+        right: 29px;
+    }
+
+    .ant-calendar-header .ant-calendar-prev-century-btn,
+    .ant-calendar-header .ant-calendar-prev-decade-btn,
+    .ant-calendar-header .ant-calendar-prev-year-btn {
+        left: auto;
+        right: 7px;
+    }
+
+    .ant-calendar-time .ant-calendar-footer .ant-calendar-today-btn {
+        float: right;
+    }
+
+    .ant-calendar-time .ant-calendar-footer-btn {
+        text-align: left;
+    }
+
+    .ant-calendar-time .ant-calendar-footer .ant-calendar-time-picker-btn {
+        margin-right: auto;
+        margin-left: 8px;
+    }
+
+    .ant-col-24.ant-form-item-label,
+    .ant-col-xl-24.ant-form-item-label,
+    .ant-form-vertical .ant-form-item-label {
+        text-align: right;
+    }
+
+    .ant-form-item-required::before {
+        margin-right: auto;
+        margin-left: 4px;
+    }
+
+    .ant-form-inline .ant-form-item {
+        margin-right: 16px;
+        margin-left: auto;
+    }
+
+    .ant-steps-item-title::after {
+        right: 100%;
+        left: auto;
+    }
+
+    .ant-steps-item-title {
+        padding-left: 16px;
+        padding-right: auto;
+    }
+
+    .ant-steps-item-icon {
+        margin-left: 8px;
+        margin-right: auto;
+    }
+
+    .ant-radio-button-wrapper:first-child {
+        border-right: 1px solid @secondaryVariant6;
+        border-left: none;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .ant-radio-button-wrapper:last-child {
+        border-radius: 4px 0 0 4px;
+    }
+    
+    .ant-message .anticon
+    {
+        margin-right: auto;
+        margin-left: 8px;
+    }
+    .ant-input-group.ant-input-group-compact > :last-child
+    {
+        border-radius: 4px 0px 0px 4px;
+        border-right-width: 1px !important;
+        border-left-width: 0 !important;
+    }
+    .ant-input-group.ant-input-group-compact > :first-child
+    {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+}

@@ -1,0 +1,201 @@
+@import (reference) "../theme/application";
+
+*{
+  font-family: 'b2mark' ,sans-serif;
+  font-weight: normal;
+}
+
+html, body, #root, .ant-layout{
+  width: 100%;
+  //height: 100%;
+  margin: 0;
+}
+
+.layout{
+  padding: 24px 0 0 0;
+  margin-bottom: 20px;
+  min-height: 100%;
+  width: 100%;
+  background-color: white;
+  #border-radius(10px)
+}
+.fullWidth{
+  width: 100%;
+  &.ant-select , &.ant-input{
+    margin-top: 15px;
+  }
+}
+.anchor {
+  color: #1890ff;
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects;
+  &:hover, &:active{
+    outline: 0;
+    text-decoration: none;
+  }
+  &:hover{
+    color: #40a9ff;
+  }
+  &:focus{
+    text-decoration: underline;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+  }
+  &:active{
+    color: #096dd9;
+  }
+}
+
+// account manager pages common styles
+body{
+
+  // just for rtl
+  &[dir='rtl']{
+    .layout.account-manager{
+      .ant-input-search{
+        .ant-input{
+          padding-left: 46px;
+          padding-right: 11px;
+        }
+        .ant-input-suffix{
+          left: 0;
+          right: auto;
+          .ant-input-search-button {
+            #border-radius(4px 0 0 4px)
+          }
+        }
+      }
+      .tag-box{
+        right: 13px;
+      }
+      .ant-table-wrapper{
+        .ant-table-thead > tr > th, .ant-table-tbody > tr > td{
+          text-align: right;
+          &.endText{
+            text-align: end;
+            padding-left: 45px;
+            padding-right: 0;
+          }
+          &.noRightPadding{
+            padding-right: 0;
+          }
+          &.noLeftPadding{
+            padding-left: 0;
+          }
+          &.active, &.inactive, &.warning{
+            i.circle{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      .ant-table-pagination.ant-pagination{
+        direction: ltr;
+        float: left;
+      }
+      .addMetricBtn{
+        position: absolute;
+        left: 31px;
+        top: -55px;
+      }
+    }
+  }
+
+  // just for ltr
+  &[dir='ltr']{
+    .layout.account-manager{
+      .tag-box{
+        left: 13px;
+      }
+      .ant-table-wrapper{
+        direction: ltr;
+        .ant-table-thead > tr > th, .ant-table-tbody > tr > td{
+          &.endText{
+            text-align: end;
+            padding-right: 45px;
+            padding-left: 0;
+          }
+          &.noRightPadding{
+            padding-left: 0;
+          }
+          &.active, &.inactive, &.warning{
+            i.circle{
+              margin-right: 10px;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .addMetricBtn{
+        position: absolute;
+        right: 31px;
+        top: -55px;
+      }
+    }
+  }
+
+  // for both rtl & ltr
+  .layout.account-manager{
+    .ant-input-search{
+      width: 40%;
+      max-width: 400px;
+      display: block;
+      margin: 10px auto;
+      .ant-input-affix-wrapper .ant-input-suffix{
+        left: 0 !important;
+      }
+    }
+    .ant-tabs-ink-bar{
+      //width: 66px !important;
+    }
+    .ant-tabs-nav .ant-tabs-tab:last-child{
+      margin-right: 10px;
+    }
+    .ant-tabs-content{
+      position: relative;
+    }
+    .tag-box{
+      position: absolute;
+      top: -2px;
+    }
+    .chart-box{
+      width: 100%;
+      margin: 10px auto;
+      img{
+        width: 100%;
+      }
+    }
+    .ant-table-wrapper{
+      .ant-table-thead > tr > th, .ant-table-tbody > tr > td{
+        &.vip{
+          text-align: center;
+          // color: @warning-color;
+          font-weight: bold;
+          font-size: 13px;
+        }
+        &.center{
+          text-align: center;
+        }
+      }
+      .ant-table-row-collapsed:after{
+        line-height: 19px;
+      }
+      .ant-table-row-expanded:after{
+        line-height: 18px;
+      }
+    }
+  }
+
+  .ant-popover-inner-content{
+    direction: ltr;
+    button{
+      margin: auto 7px;
+    }
+  }
+}
