@@ -18,6 +18,6 @@ module.exports = smp.wrap(merge(commonConfig, {
     },
     devtool: 'source-map',
     plugins: [
-         new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ],
 }));
