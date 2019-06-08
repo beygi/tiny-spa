@@ -2,6 +2,7 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const commonConfig = require('./common');
+const devMode = "yess";
 const {
     resolve
 } = require('path');
@@ -9,6 +10,7 @@ const {
 module.exports = merge(commonConfig, {
     mode: 'development',
     entry: [
+        'react-hot-loader/patch', // activate HMR for React
         'webpack-dev-server/client?http://localhost:3000', // bundle the client for webpack-dev-server and connect to the provided endpoint
         'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
         './index.tsx' // the entry point of our app
@@ -30,7 +32,6 @@ module.exports = merge(commonConfig, {
             enforce: "pre",
             loader: "tslint-loader",
             test: /\.tsx?$/,
-            exclude : [resolve(__dirname, '../../src/services/trans/pdate')],
             options: {
                 configFile: "tslint.json",
                 emitErrors: true,
