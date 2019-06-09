@@ -1,5 +1,19 @@
-# Web Client
-This is a guide to dev,build and deploy webapp
+# Tiny-Spa is a full featured SPA boilerplate in less than 30kb (gzipped)
+
+## Feauters and included libraries:
+* Preact
+* TypeScript
+* Less
+* React-router
+* Fetch api
+* Hot loading
+* Milligram css framework
+
+## TODO:
+* Add unistore to the project
+* Make the router connected
+* SSR
+* Code spliting
 
 ## Installation
 ```bash
