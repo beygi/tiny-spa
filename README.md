@@ -2,6 +2,7 @@
 
 ## Feauters and included libraries:
 * Preact
+* Babel 7
 * TypeScript
 * Less
 * React-router
