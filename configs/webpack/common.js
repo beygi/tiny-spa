@@ -43,6 +43,7 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: "babel-loader",
+                exclude: /node_modules/,
             },
             {
                 test: /\.(le|c)ss$/,
@@ -75,7 +76,7 @@ module.exports = {
                                 'popover-color': tinycolor(paletteLight).darken(15).toString(),
                             },
                         }
-                    }
+                    },
                 ],
             },
             {
@@ -88,10 +89,6 @@ module.exports = {
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: "file-loader"
-            },
-            {
-                test: /\.po$/,
-                loader: 'i18next-po-loader'
             }
         ],
     },

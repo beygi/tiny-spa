@@ -54,6 +54,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-decorators": "^7.4.4",
+    "babel-polyfill": "^6.26.0",
     "git-revision-webpack-plugin": "^3.0.3",
     "history": "^4.9.0",
     "isomorphic-unfetch": "^3.0.0",

@@ -33,7 +33,7 @@ export default class API {
         delete this.headers[`Authorization`];
     }
 
-    public fetchOrders(page) {
+    public getUser(page) {
             return fetch(`https://randomuser.me/api/`, {
                 method: "get",
                 headers: this.headers,
