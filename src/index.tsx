@@ -1,23 +1,24 @@
 /**
  * @module MainEntryPoint
  */
+import { createBrowserHistory } from "history";
 import * as _ from "lodash";
 import * as React from "preact";
-import Router from "preact-router";
-import Landing from "./containers/Landing";
-import Random from "./containers/Users";
+import { Route, Switch } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import AppContainer from "./containers/app";
 import "./theme/application.less";
 
-import { VERSION } from "./constants";
-
 // we need a history object to hold browsers history
-// const history = createBrowserHistory();
+const history = createBrowserHistory();
 
-console.log("version: " + VERSION);
 React.render(
-        <Router>
-            <Landing path="/" />
-            <Random path="/random" />
-        </Router>,
+    // <Provider store={store}>
+    <BrowserRouter>
+            <Switch>
+                <Route path="/" component={AppContainer} />
+            </Switch>
+    </BrowserRouter>,
+    // </Provider>,
     document.getElementById("root"),
 );

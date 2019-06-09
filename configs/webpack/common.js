@@ -2,9 +2,6 @@
 const {
     resolve
 } = require('path');
-const {
-    CheckerPlugin
-} = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
@@ -30,32 +27,22 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            moment: 'antd-jalali-moment',
-            "@ant-design/icons/lib/dist$": resolve(__dirname, "../../src/lib/icon/antIcons.ts"),
-        },
+              react: "preact-compat",
+              "react-dom": "preact-compat"
+        }
     },
     context: resolve(__dirname, '../../src'),
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
-                use: ['babel-loader', 'source-map-loader'],
+                use: ['source-map-loader'],
+                enforce: "pre",
                 exclude: /node_modules/,
             },
             {
                 test: /\.tsx?$/,
-                use: [{
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-react'],
-                    }
-                }, {
-                    loader: "awesome-typescript-loader",
-
-                    options: {
-                        errorsAsWarnings: false,
-                        useCache: true,
-                    }
-                }],
+                use: "babel-loader",
             },
             {
                 test: /\.(le|c)ss$/,
@@ -112,7 +99,6 @@ module.exports = {
         publicPath: "/"
     },
     plugins: [
-        new CheckerPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html',
             favicon: 'logo.png',
@@ -120,14 +106,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name]-[chunkhash].min.css",
         }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-	new GitRevisionPlugin({
-      		lightweightTags: true
-    	}),
         new webpack.DefinePlugin({
             DEPLOY_TYPE: JSON.stringify(process.env.DEPLOY_TYPE || "production"),
             VERSION: JSON.stringify(gitRevisionPlugin.version()),
-            COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
+            // COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
             BRANCH: JSON.stringify(gitRevisionPlugin.branch())
         }),
     ],

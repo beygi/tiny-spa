@@ -14,7 +14,7 @@ class LandingContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <div>Loading</div>
+            <div>Loadin</div>
         );
     }
 }

@@ -1,7 +1,6 @@
 import "isomorphic-unfetch";
 import config from "../config";
 
-
 export default class API {
     public static instance: any;
 
@@ -16,8 +15,7 @@ export default class API {
     public headers: HeadersInit;
     public AuthToken: string;
 
-    constructor(baseURL, headers)
-    {
+    constructor(baseURL, headers) {
         this.baseURL = baseURL;
         this.headers = headers;
     }
@@ -25,19 +23,17 @@ export default class API {
     public setAuthToken(token) {
         this.AuthToken = token;
         this.headers = {...this.headers , Authorization : `Token ${token}` };
-        if (token === null){
+        if (token === null) {
             this.destroy();
         }
     }
 
-
     public destroy() {
         this.AuthToken = null;
-        delete this.headers["Authorization"];
+        delete this.headers[`Authorization`];
     }
 
-    public fetchOrders(page)
-    {
+    public fetchOrders(page) {
             return fetch(`https://randomuser.me/api/`, {
                 method: "get",
                 headers: this.headers,
