@@ -34,11 +34,17 @@ class UserContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        if (this.state.userData === null) { return <div className="title"><div>Loading</div></div>; }
         return <div className="users">
-                    <div>
-                            <img onClick={() => {this.fetchData(); }} src={this.state.userData.picture.large} alt=""/>
+                    <div className="user-data">
+                    <a onClick={() => {this.fetchData(); }} className={"button" + (this.state.userData ? "" : " button-outline") } >
+                            {this.state.userData ? "Refresh" : "Loading"}
+                    </a>
+                    {this.state.userData &&
+                        <div>
+                            <img className="user-img" src={this.state.userData.picture.large} alt=""/>
                             <div className="title">{`${this.state.userData.name.first} ${this.state.userData.name.last}`}</div>
+                        </div>
+                    }
                     </div>
                 </div> ;
     }
