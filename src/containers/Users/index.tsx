@@ -16,7 +16,8 @@ class UserContainer extends React.Component<IProps, IState> {
         this.state = {userData : null};
     }
 
-    public async componentDidMount() {
+    public async fetchData() {
+        this.setState({userData : null});
         try {
             const res = await API.getUser();
             if (res.ok) {
@@ -28,11 +29,15 @@ class UserContainer extends React.Component<IProps, IState> {
           }
     }
 
+    public componentDidMount() {
+        this.fetchData();
+    }
+
     public render() {
-        if (this.state.userData === null) { return <div className="users"><div>Loading</div></div>; }
+        if (this.state.userData === null) { return <div className="title"><div>Loading</div></div>; }
         return <div className="users">
                     <div>
-                            <img src={this.state.userData.picture.large} alt=""/>
+                            <img onClick={() => {this.fetchData(); }} src={this.state.userData.picture.large} alt=""/>
                             <div className="title">{`${this.state.userData.name.first} ${this.state.userData.name.last}`}</div>
                     </div>
                 </div> ;
