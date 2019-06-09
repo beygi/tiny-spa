@@ -10,7 +10,7 @@ const smp = new SpeedMeasurePlugin();
 
 module.exports = smp.wrap(merge(commonConfig, {
     mode: 'production',
-    entry: ['babel-polyfill','./index.tsx'],
+    entry: ['./index.tsx'],
     output: {
         filename: 'js/[name]-[chunkhash].min.js',
         path: resolve(__dirname, '../../dist'),
@@ -18,6 +18,6 @@ module.exports = smp.wrap(merge(commonConfig, {
     },
     devtool: 'source-map',
     plugins: [
-        new BundleAnalyzerPlugin()
+        //new BundleAnalyzerPlugin()
     ],
 }));

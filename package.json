@@ -15,13 +15,12 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json",
     "profile": "webpack -p --config=configs/webpack/prod.js --profile --json > webpack-stats.json",
-    "extract": "nodejs bin/extract.js && ls -1 src/services/trans/*.po | xargs -i msgmerge -U --backup=off --no-wrap {} src/services/trans/translation.pot",
-    "apiGen": "ls swager-specs -1 | grep json | xargs -i node ./src/lib/api/generate.js {} && tslint --fix --force src/lib/api/*.ts && tslint --fix --force src/lib/api/*.ts",
     "doc": "typedoc --tsconfig ./tsconfig.json --readme ./README.md --json docs/docs.json --out docs --mode modules ./src"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
@@ -49,13 +48,14 @@
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.7.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "tslint": "^5.17.0",
+    "tinycolor2": "^1.4.1",
+    "source-map-loader": "^0.2.4",
+    "git-revision-webpack-plugin": "^3.0.3"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "babel-polyfill": "^6.26.0",
-    "git-revision-webpack-plugin": "^3.0.3",
+    "@babel/runtime": "^7.4.5",
     "history": "^4.9.0",
     "isomorphic-unfetch": "^3.0.0",
     "preact": "^8.4.2",
@@ -63,9 +63,6 @@
     "preact-router": "^2.6.1",
     "react-hot-loader": "^4.9.0",
     "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "source-map-loader": "^0.2.4",
-    "tinycolor2": "^1.4.1",
-    "tslint": "^5.17.0"
+    "react-router-dom": "^5.0.1"
   }
 }
