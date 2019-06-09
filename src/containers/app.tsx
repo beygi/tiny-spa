@@ -41,7 +41,7 @@ class AppContainer extends React.Component<IProps, IState> {
                     {/* Public routes */}
                     <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
                     <Route path={`/random`} render={() => <Layout private={false}><UserContainer /></Layout>} />
-                    {/* not Not Founded routes */}
+                    {/* Not Founded routes */}
                     <Route component={NotFoundContainer} />
                 </Switch>
         );

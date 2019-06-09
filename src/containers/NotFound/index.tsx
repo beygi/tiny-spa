@@ -13,7 +13,7 @@ class NotFoundContainer extends React.Component<IProps, IState> {
     public render() {
         return (
             <div>
-                <h1>we are sorry , this is a 404</h1>
+                <h1 className="title">we are sorry , this is a 404</h1>
             </div>
         );
     }

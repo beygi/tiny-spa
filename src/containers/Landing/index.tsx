@@ -13,9 +13,7 @@ class LandingContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        return (
-            <div>Loadin</div>
-        );
+        return <h1 className="title"> Tiny SPA </h1>;
     }
 }
 
