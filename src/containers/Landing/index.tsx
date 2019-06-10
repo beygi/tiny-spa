@@ -1,4 +1,6 @@
 import * as React from "preact";
+import { Link } from "react-router-dom";
+
 import "./style.less";
 
 interface IProps {
@@ -13,7 +15,10 @@ class LandingContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        return <h1 className="title"> Tiny SPA </h1>;
+        return <div className="title">
+            <h1> Tiny SPA </h1>
+            <Link className="button" to="/random">User page</Link>
+        </div>;
     }
 }
 
