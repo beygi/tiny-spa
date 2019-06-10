@@ -10,24 +10,30 @@
 * Hot loading
 * Milligram css framework
 * Unistore state manager
+* SSR with puppeteer and express
 
 ## TODO:
 * Make the router connected
-* SSR
+
 * Code spliting
 
 ## Installation
 ```bash
 yarn install
 ```
-## Development Build with node server
+## Development build with node server
 ```bash
 yarn start-dev
 ```
 
-## Production Build
+## Production build
 ```bash
 yarn build
+```
+
+## Production build with SSR server
+```bash
+yarn serve
 ```
 
 ## generate documentation

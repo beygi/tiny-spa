@@ -25,7 +25,7 @@ app.get('*', async (req, res) => {
             // this is our main html file, we must server it using SSR
             const browser = await puppeteer.launch({headless: true});
             const page = await browser.newPage();
-            const local_url = `http://localhost:8000${req.url}?ssr=true`;
+            const local_url = `http://localhost:4000${req.url}?ssr=true`;
             await page.goto(local_url, {
                  waitUntil: "networkidle0",
             });
@@ -40,4 +40,4 @@ app.get('*', async (req, res) => {
 
 });
 
-app.listen(8000, () => console.log(`Server is up`))
+app.listen(4000, () => console.log(`Server is up at port 4000`))

@@ -11,7 +11,7 @@
     "lint:ts": "tslint './src/**/*.ts*' --format stylish --force",
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
-    "start-prod": "yarn run build && node express.js",
+    "serve": "yarn run build && node server.js",
     "test": "jest --watch --coverage --config=configs/jest.json",
     "profile": "webpack -p --config=configs/webpack/prod.js --profile --json > webpack-stats.json",
     "doc": "typedoc --tsconfig ./tsconfig.json --readme ./README.md --json docs/docs.json --out docs --mode modules ./src"
