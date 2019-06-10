@@ -1,4 +1,4 @@
-# Tiny-Spa is a full featured SPA boilerplate in less than 30kb (gzipped)
+# Tiny-Spa is a full featured single page progressive web application boilerplate in less than 30kb (gzipped)
 
 ## Feauters and included libraries:
 * Preact
