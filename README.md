@@ -9,9 +9,9 @@
 * Fetch api
 * Hot loading
 * Milligram css framework
+* Unistore state manager
 
 ## TODO:
-* Add unistore to the project
 * Make the router connected
 * SSR
 * Code spliting
