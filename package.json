@@ -63,6 +63,7 @@
     "preact-router": "^2.6.1",
     "react-hot-loader": "^4.9.0",
     "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "unistore": "^3.4.1"
   }
 }

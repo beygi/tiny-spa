@@ -1,9 +1,21 @@
 import * as React from "preact";
+import { connect } from "unistore/preact";
 import api from "../../lib/api";
+import { actions } from "../../store/unistore";
+
 import "./style.less";
 const API  = api.getInstance();
 
+const Counter = connect("count")(
+    ({ count }) => (
+      <div>
+        <p>Count: <b>{count}</b></p>
+      </div>
+    ),
+  );
+
 interface IProps {
+    increase(count?: number): any;
 }
 
 interface IState {
@@ -17,6 +29,7 @@ class UserContainer extends React.Component<IProps, IState> {
     }
 
     public async fetchData() {
+        this.props.increase();
         this.setState({userData : null});
         try {
             const res = await API.getUser();
@@ -35,6 +48,7 @@ class UserContainer extends React.Component<IProps, IState> {
 
     public render() {
         return <div className="users">
+            <Counter />
                     <div className="user-data">
                     <a onClick={() => {this.fetchData(); }} className={"button" + (this.state.userData ? "" : " button-outline") } >
                             {this.state.userData ? "Refresh" : "Loading"}
@@ -50,4 +64,4 @@ class UserContainer extends React.Component<IProps, IState> {
     }
 }
 
-export default UserContainer;
+export default connect("count", actions)(UserContainer);
