@@ -5,18 +5,54 @@
     .row
     {
         height: 100vh;
-        img
-        {
-            height: auto;
-            width: auto;
-            float: left;
-            max-width: 30%;
-            max-height: 100%;
-        }
         .column
         {
-            box-shadow: 0px 0px 0px 1px black;
+            box-shadow: 0px 0px 4px 0px #a1a1a1;
             margin:5px;
+            border-radius: 5px;
+            padding: 0;
+            &:hover
+            {
+                box-shadow: 0px 0px 4px 0px black;
+            }
+            .item
+            {
+                height: 100%;
+                display: flex;
+                .name
+                {
+                    width:70%;
+                    height: 100%;
+                    display: flex;              
+                    align-items: center;
+                    padding: 5px;
+                }
+                .img-area
+                {
+                    width: 30%;
+                    height: 100%;
+                    display: flex;
+                    margin: 0px 10px 0px 0px;
+                    border-right: 1px dashed #c8c8c8;
+                    padding-right: 6px;
+                    img
+                    {
+                        height: auto;
+                        width: auto;
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        float: left;
+                        align-self: center;
+                        margin: auto;
+                    }
+                    &:hover
+                    {
+                        border-color: black;
+                    }
+                }
+            }
         }
+        
     }
 }

@@ -23,7 +23,7 @@ class LandingContainer extends React.Component<IProps, IState> {
     }
 
     public async componentDidMount() {
-        const result = await API.getProductsByTag("Women", 1);
+        const result = await API.getProductsByTag("Women", 112);
         if (result.ok) {
             const json = await result.json();
             this.setState({products : json.results , count: json.count});
@@ -37,9 +37,16 @@ class LandingContainer extends React.Component<IProps, IState> {
 
         const products = this.state.products.slice(0, 4).map((item) => {
             return <div key={item.sid} className="column">
-            <img src={item.featured_image} />
-            <div className="name"></div>
-
+            <div className="item">
+                    <div className="img-area">
+                        <img src={item.featured_image} />
+                    </div>
+                    <div className="name">
+                        <a href={`https://egerd.com/p/${item.sid}`} >
+                            {item.name}
+                        </a>
+                    </div>
+            </div>
             </div>;
         });
 
