@@ -5,7 +5,7 @@
  * configuration object
  */
 const config = {
-    apiUrl:  "https://api.domain.com",
+    apiUrl:  "https://egerd.com/api",
     webSocketUrl: "https://socket.domain.com",
 };
 

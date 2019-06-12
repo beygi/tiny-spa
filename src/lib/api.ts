@@ -4,7 +4,7 @@ import config from "../config";
 export default class API {
     public static instance: any;
 
-    public static getInstance() {
+    public static getInstance(): API {
         if (!this.instance) {
             this.instance = new API(config.apiUrl, {"Content-Type": "application/json" , "Accept": "application/json"});
         }
@@ -33,10 +33,18 @@ export default class API {
         delete this.headers[`Authorization`];
     }
 
-    public getUser(page) {
+    public getUser() {
             return fetch(`https://randomuser.me/api/`, {
                 method: "get",
                 headers: this.headers,
               });
     }
+
+    public getProductsByTag(name: string, page: number): Promise<Response> {
+        return fetch(`${this.baseURL}/vitrine/tag/${name}/?page=${page}`, {
+            method: "get",
+            headers: this.headers,
+          });
+    }
+
 }
