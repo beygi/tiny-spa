@@ -7,6 +7,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const commonConfig = require('./common');
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const smp = new SpeedMeasurePlugin();
+const isAnalysis = process.argv.indexOf("-a") >= 0;
 
 module.exports = smp.wrap(merge(commonConfig, {
     mode: 'production',
@@ -18,6 +19,6 @@ module.exports = smp.wrap(merge(commonConfig, {
     },
     devtool: 'source-map',
     plugins: [
-        //new BundleAnalyzerPlugin()
+        new BundleAnalyzerPlugin({analyzerMode: !isAnalysis ? 'disable' : 'server'}),
     ],
 }));
