@@ -33,18 +33,10 @@ export default class API {
         delete this.headers[`Authorization`];
     }
 
-    public getUser() {
+    public getUser(): Promise<Response> {
             return fetch(`https://randomuser.me/api/`, {
                 method: "get",
                 headers: this.headers,
               });
     }
-
-    public getProductsByTag(name: string, page: number): Promise<Response> {
-        return fetch(`${this.baseURL}/vitrine/tag/${name}/?page=${page}`, {
-            method: "get",
-            headers: this.headers,
-          });
-    }
-
 }

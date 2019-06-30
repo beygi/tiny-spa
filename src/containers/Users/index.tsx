@@ -56,7 +56,7 @@ class UserContainer extends React.Component<IProps, IState> {
                     {this.state.userData &&
                         <div>
                             <img className="user-img" src={this.state.userData.picture.large} alt=""/>
-                            <div className="title">{`${this.state.userData.name.first} ${this.state.userData.name.last}`}</div>
+                            <h3>{`${this.state.userData.name.first} ${this.state.userData.name.last}`}</h3>
                         </div>
                     }
                     </div>
