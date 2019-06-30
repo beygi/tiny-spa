@@ -23,14 +23,13 @@ app.get('*', async (req, res) => {
         if(ext === "")
         {
             // this is our main html file, we must server it using SSR
-            const browser = await puppeteer.launch({headless: true});
             const page = await browser.newPage();
             const local_url = `http://localhost:4000${req.url}?ssr=true`;
             await page.goto(local_url, {
                  waitUntil: "networkidle0",
             });
             const html = await page.content();
-            await browser.close();
+            page.close();
             res.send(html);
         } else
         {
@@ -40,4 +39,9 @@ app.get('*', async (req, res) => {
 
 });
 
-app.listen(4000, () => console.log(`Server is up at port 4000`))
+
+let browser = "";
+(async () => {
+    browser = await puppeteer.launch();
+    app.listen(4000, () => console.log(`Server is up at port 4000`));
+  })();
