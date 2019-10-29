@@ -14,6 +14,7 @@
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "serve": "yarn run build && node server.js",
     "test": "jest --watch --coverage --config=configs/jest.json",
+    "test:bundlesize": "bundlesize",
     "profile": "webpack -p --config=configs/webpack/prod.js --profile --json > webpack-stats.json",
     "doc": "typedoc --tsconfig ./tsconfig.json --readme ./README.md --json docs/docs.json --out docs --mode modules ./src"
   },
@@ -28,6 +29,7 @@
     "@types/webpack-env": "^1.13.9",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.0",
+    "bundlesize": "^0.18.0",
     "css-loader": "^3.0.0",
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
