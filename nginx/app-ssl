@@ -33,6 +33,13 @@ server {
     root /your/dist/dir;
     index index.html;
 
+    gzip  on;
+      gzip_proxied any;
+      gzip_min_length  1000;
+      gzip_buffers     4 4k;
+      gzip_types       application/x-javascript text/css application/javascript text/javascript text/plain text/xml application/json application/vnd.ms-fontobject application/x-font-opentype application/x-font-truetype application/x-font-ttf application/xml font/eot font/opentype font/otf image/svg+xml image/vnd.microsoft.icon;
+      gzip_disable "MSIE [1-6]\.";
+
     location / {
         try_files $uri $uri/ /index.html;
     }
