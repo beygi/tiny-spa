@@ -16,6 +16,7 @@ server {
 
 server {
     listen 443;
+    expires $expires;
     server_name websitedomain.com;
 
     ssl_certificate           /etc/nginx/cert.crt;
